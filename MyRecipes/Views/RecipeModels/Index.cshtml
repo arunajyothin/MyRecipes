@@ -1,0 +1,69 @@
+﻿@model IEnumerable<MyRecipes.Models.RecipeModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RecipeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreparationTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CookingTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.videoUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorUserName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecipeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreparationTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CookingTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.videoUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthorEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthorUserName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div id="bgSlider" style="position: fixed; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: -1;"><img src="/images/bg-img1.jpg" style="position: absolute; left: 0px; top: 0px; height: auto;"></div>
+<br />
+<br />
+
+<div class="container">
+    <div id="searchfield" class="span8 offset2">
+        <form>
+            <span>
+            <input type="text" class="biginput" id="searchRecipe" autocomplete="off"  placeholder="Search">
+                <a id="searchRecipes">
+                    <span class="glyphicon glyphicon-search"></span>
+                </a>
+            </span> 
+        </form>
+    </div>
+    <br/>
+    <a class="createbtn offset2" href="#" id="addRecipe">Create a New Recipe!</a>
+    <br/><br/><br/>
+    <div class="error well span8 offset2" id="error" style="color: #D8000C;background-color: #FFBABA; display:none;"><span>An Error Has Occurred</span></div>
+    <div class="well span8 offset2" id="allRecipes">
+    </div>
+    <div id="newRecipeDiv" class="span8">
+        <form id="newRecipeForm">
+            <a href="#" class="btn btn-danger cancelNewRecipe" style="float:right">x</a>
+            <!-- progressbar -->
+            <ul id="progressbar">
+                <li class="active">Recipe Details</li>
+                <li>Ingredients</li>
+                <li>Steps</li>
+            </ul>
+            <!-- fieldsets -->
+            <fieldset id="newRecipeModel">
+                <h2 class="fs-title">Recipe Details</h2>
+                <h3 class="fs-subtitle">What to cook?</h3>
+                <input type="text" name="RecipeName" placeholder="Recipe Name" id="RecipeName"/>
+                <textarea name="Description" placeholder="Description" id="Description"></textarea>
+                <input type="text" name="PreparationTime" placeholder="Preparation Time" id="PreparationTime" />
+                <input type="text" name="CookingTime" placeholder="Cooking Time" id="CookingTime" />
+                <input type="text" name="videoUrl" placeholder="YouTube Video" id="videoUrl"/>
+                <input type="button" name="next" class="next action-button nextRecipeModel" value="Next" />
+            </fieldset>
+            <fieldset id="newRecipeIngredients">
+                <h2 class="fs-title">Ingredients</h2>
+                <h3 class="fs-subtitle">What to buy?</h3>
+                <div id="NewIngredient1">
+                    <input type="text" id="Quantity1" placeholder="Quantity" style="width:40%" />
+                    <input type="text" id="IngredientName1" placeholder="Ingredient" style="width:40%" />
+                </div>  
+                <button type="button" class="btn btn-default btn-sm addIngredient" id="addIngredient"><span class="glyphicon glyphicon-plus-sign"></span> Add another ingredient</button>
+                <input type="button" name="previous" class="previous action-button" value="Previous" />
+                <input type="button" name="next" class="next action-button nextIngredient" value="Next" />
+            </fieldset>
+            <fieldset id="newRecipeSteps">
+                <h2 class="fs-title">Steps</h2>
+                <h3 class="fs-subtitle">What to do?</h3>
+                <textarea name="Step" placeholder="Step 1" id="Step1"></textarea>
+                <button type="button" class="btn btn-default btn-sm" id="addStep"><span class="glyphicon glyphicon-plus-sign"></span> Add another step</button>
+                <input type="button" name="previous" class="previous action-button" value="Previous" />
+                <input type="button" id="submitNewRecipe"name="submit" class="submit action-button submitNewRecipe" value="Submit" />
+            </fieldset>
+        </form>
+    </div>
+</div>

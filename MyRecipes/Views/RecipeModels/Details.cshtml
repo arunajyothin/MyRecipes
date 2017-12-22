@@ -1,0 +1,74 @@
+﻿@model MyRecipes.Models.RecipeModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RecipeModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RecipeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecipeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreparationTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreparationTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CookingTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CookingTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.videoUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.videoUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthorEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuthorEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthorUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuthorUserName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
